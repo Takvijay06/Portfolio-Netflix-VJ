@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Code, Layers, Briefcase } from 'lucide-react';
+import { Code, Code2, Layers, Briefcase } from 'lucide-react';
 import { useAppDispatch } from '../hooks/redux';
 import { setCurrentProfile, ProfileType } from '../store/profileSlice';
 
@@ -38,6 +38,16 @@ const ProfileSelection: React.FC = () => {
     <div className="min-h-screen bg-black flex items-center justify-center p-4">
       <div className="w-full max-w-6xl">
         <div className="text-center mb-16">
+          <div className="flex flex-col items-center mb-6">
+            <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 border border-gray-700 mb-2">
+              <span className="text-3xl animate-bounce" role="img" aria-label="Animated man coder">👨‍💻</span>
+            </div>
+            <div className="flex items-center gap-2 text-red-500 animate-pulse">
+              <Code2 size={24} className="animate-bounce" />
+              <span className="text-xl font-semibold text-white">Hii</span>
+            </div>
+            <p className="text-gray-200 mt-2 font-bold">Vijay Tak Welcoming you !</p>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
             Who's browsing?
           </h1>

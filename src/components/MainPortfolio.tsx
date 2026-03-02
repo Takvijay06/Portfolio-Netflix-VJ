@@ -3,7 +3,7 @@ import { useAppSelector } from '../hooks/redux';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import ContentRow from './ContentRow';
-import { recruiterContent, stackerContent, developerContent } from '../data/contentData';
+import { recruiterContent, stackerContent, developerContent, experienceContent } from '../data/contentData';
 
 const MainPortfolio: React.FC = () => {
   const currentProfile = useAppSelector((state) => state.profile.currentProfile);
@@ -15,6 +15,8 @@ const MainPortfolio: React.FC = () => {
           <>
             <ContentRow title="Featured Projects" items={recruiterContent.featured.projects} />
             <ContentRow title="Core Skills" items={recruiterContent.featured.skills} />
+            <ContentRow title="Experience Timeline" items={experienceContent.timeline} />
+            <ContentRow title="Tools and Platforms Used" items={experienceContent.tools} />
           </>
         );
       case 'stacker':

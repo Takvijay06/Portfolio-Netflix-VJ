@@ -1,12 +1,12 @@
 import React from 'react';
-import { Play, Info, Star } from 'lucide-react';
+import { Play, Info, Star, MapPin, Phone, Mail, Linkedin } from 'lucide-react';
 import { useAppSelector } from '../hooks/redux';
 
 const heroContent = {
   recruiter: {
     title: 'Vijay Tak',
     subtitle: 'Full Stack Engineer',
-    description: 'Experienced software engineer with 4+ years in React, Node.js, and cloud technologies. Proven track record of delivering scalable applications and leading development teams.',
+    description: 'Experienced professional with 5+ years of experience. Proficient in web development and algorithmic problem-solving. I am looking for a challenging role as a software developer where I can use my skills to make a difference',
     badge: 'Available for Hire',
     image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
   },
@@ -24,11 +24,19 @@ const heroContent = {
     badge: 'Open Source',
     image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
   },
+  experience: {
+    title: 'Professional Experience',
+    subtitle: 'In Time Tec, India',
+    description: '6+ years of frontend and full-stack engineering experience focused on delivery speed, code quality, mentoring, and measurable product impact.',
+    badge: 'Career Timeline',
+    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop',
+  },
 };
 
 const HeroSection: React.FC = () => {
   const currentProfile = useAppSelector((state) => state.profile.currentProfile);
   const content = heroContent[currentProfile || 'developer'];
+  const resumePath = '/VijayTakResume2026.pdf';
 
   return (
     <div className="relative h-screen flex items-center">
@@ -58,17 +66,53 @@ const HeroSection: React.FC = () => {
           <p className="text-lg text-gray-200 mb-8 leading-relaxed">
             {content.description}
           </p>
+
+          {currentProfile === 'recruiter' && (
+            <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200">
+              <div className="flex items-center gap-2">
+                <MapPin size={16} />
+                <span>Jaipur, India</span>
+              </div>
+              <a href="tel:+917737801095" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone size={16} />
+                <span>+91-7737801095</span>
+              </a>
+              <a href="mailto:Takvijay06@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Mail size={16} />
+                <span>Takvijay06@gmail.com</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/takvijay06/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Linkedin size={16} />
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          )}
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="flex items-center justify-center bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition-colors">
+            <a
+              href={resumePath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-white text-black px-8 py-3 rounded font-semibold hover:bg-gray-200 transition-colors"
+            >
               <Play size={20} className="mr-2" fill="currentColor" />
               View Resume
-            </button>
+            </a>
             
-            <button className="flex items-center justify-center bg-gray-600/70 text-white px-8 py-3 rounded font-semibold hover:bg-gray-600 transition-colors">
+            <a
+              href="https://www.linkedin.com/in/takvijay06/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-gray-600/70 text-white px-8 py-3 rounded font-semibold hover:bg-gray-600 transition-colors"
+            >
               <Info size={20} className="mr-2" />
               More Info
-            </button>
+            </a>
           </div>
           
           <div className="flex items-center mt-6 space-x-4">

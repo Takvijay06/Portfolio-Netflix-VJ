@@ -33,14 +33,26 @@ const ContentCard: React.FC<ContentCardProps> = ({
         {/* Hover Actions */}
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-2">
           {link && (
-            <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${title} project link`}
+              className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors"
+            >
               <ExternalLink size={16} />
-            </button>
+            </a>
           )}
           {github && (
-            <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${title} GitHub repository`}
+              className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-colors"
+            >
               <Github size={16} />
-            </button>
+            </a>
           )}
         </div>
       </div>
